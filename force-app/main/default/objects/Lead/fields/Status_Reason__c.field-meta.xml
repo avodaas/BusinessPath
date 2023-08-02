@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Status_Reason__c</fullName>
+    <description>Status reason for qualified or unqualified.</description>
+    <externalId>false</externalId>
+    <label>Status Reason</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <controllingField>Status</controllingField>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Invalid Email</fullName>
+                <default>false</default>
+                <label>Invalid Email</label>
+            </value>
+            <value>
+                <fullName>Invalid Phone</fullName>
+                <default>false</default>
+                <label>Invalid Phone</label>
+            </value>
+            <value>
+                <fullName>Lack of budget</fullName>
+                <default>false</default>
+                <label>Lack of budget</label>
+            </value>
+            <value>
+                <fullName>Not a decision maker</fullName>
+                <default>false</default>
+                <label>Not a decision maker</label>
+            </value>
+            <value>
+                <fullName>small company</fullName>
+                <default>false</default>
+                <label>small company</label>
+            </value>
+            <value>
+                <fullName>Already have a solution</fullName>
+                <default>false</default>
+                <label>Already have a solution</label>
+            </value>
+            <value>
+                <fullName>Auto-Nurture</fullName>
+                <default>false</default>
+                <label>Auto-Nurture</label>
+            </value>
+            <value>
+                <fullName>Junk</fullName>
+                <default>false</default>
+                <label>Junk</label>
+            </value>
+            <value>
+                <fullName>Other</fullName>
+                <default>false</default>
+                <label>Other</label>
+            </value>
+        </valueSetDefinition>
+        <valueSettings>
+            <controllingFieldValue>Unqualified</controllingFieldValue>
+            <valueName>Invalid Email</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unqualified</controllingFieldValue>
+            <valueName>Invalid Phone</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unqualified</controllingFieldValue>
+            <valueName>Not a decision maker</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unqualified</controllingFieldValue>
+            <valueName>Junk</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Unqualified</controllingFieldValue>
+            <controllingFieldValue>Nurture</controllingFieldValue>
+            <valueName>Other</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nurture</controllingFieldValue>
+            <valueName>Lack of budget</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nurture</controllingFieldValue>
+            <valueName>small company</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nurture</controllingFieldValue>
+            <valueName>Already have a solution</valueName>
+        </valueSettings>
+        <valueSettings>
+            <controllingFieldValue>Nurture</controllingFieldValue>
+            <valueName>Auto-Nurture</valueName>
+        </valueSettings>
+    </valueSet>
+</CustomField>

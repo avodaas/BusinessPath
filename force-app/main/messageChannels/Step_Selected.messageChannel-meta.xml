@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<LightningMessageChannel xmlns="http://soap.sforce.com/2006/04/metadata">
+    <description>Message Channel to pass a record Id and current Step process</description>
+    <isExposed>true</isExposed>
+    <lightningMessageFields>
+        <description>This is the Step value that changed</description>
+        <fieldName>step</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>This is the field&apos;s step name</description>
+        <fieldName>fieldStepName</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>This is the records record Type Id</description>
+        <fieldName>recordTypeId</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>This is the steps field dependent picklist field</description>
+        <fieldName>dependentPickListField</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>is the recordRedy to be updated</description>
+        <fieldName>readyForUpdate</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>just update to the current step and don&apos;t move it on to the next step</description>
+        <fieldName>updateCurrentStep</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>fields To Update</description>
+        <fieldName>fieldsToUpdate</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>This is the record that changed</description>
+        <fieldName>curRecord</fieldName>
+    </lightningMessageFields>
+    <lightningMessageFields>
+        <description>previous Step</description>
+        <fieldName>prevStep</fieldName>
+    </lightningMessageFields>
+    <masterLabel>StepSelected</masterLabel>
+</LightningMessageChannel>
