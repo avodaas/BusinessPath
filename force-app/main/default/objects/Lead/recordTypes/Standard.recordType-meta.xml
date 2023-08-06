@@ -205,32 +205,6 @@
         </values>
     </picklistValues>
     <picklistValues>
-        <picklist>Primary__c</picklist>
-        <values>
-            <fullName>No</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>Yes</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
-        <picklist>ProductInterest__c</picklist>
-        <values>
-            <fullName>GC1000 series</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>GC3000 series</fullName>
-            <default>false</default>
-        </values>
-        <values>
-            <fullName>GC5000 series</fullName>
-            <default>false</default>
-        </values>
-    </picklistValues>
-    <picklistValues>
         <picklist>Pronouns</picklist>
         <values>
             <fullName>He%2FHim</fullName>
