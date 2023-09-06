@@ -1,0 +1,52 @@
+<template>
+  <lightning-card>
+    <div class="slds-path slds-p-horizontal_x-small">
+        <div class="slds-grid slds-path__track">
+          <div class="slds-grid slds-path__scroller-container">
+            <div class="slds-path__scroller">
+              <div class="slds-path__scroller_inner">
+                <ul class="slds-path__nav" role="listbox" aria-orientation="horizontal">
+                    <template for:each={steps} for:item="step">
+                        <li class="slds-path__item slds-is-incomplete"  role="presentation"  key={step.label}  data-li-id={step.label} >
+                            <a class="slds-path__link" href="#" id={step.label} role="option" tabindex="0" data-id={step.label}  onclick={handleSelectStep} onmousemove={showToolTip} onmouseout={closeToolTip}>
+                              <span class="slds-path__stage">
+                                <template if:true={step.isComplete}>
+                                  <lightning-icon icon-name="utility:check" size="xx-small" variant="inverse" ></lightning-icon>
+                                </template>
+                              </span>
+                              <span class="slds-path__title">{step.label}</span>
+                            </a>
+                        </li>
+                    </template>
+                </ul>
+              </div>
+            </div>
+          </div>
+          <div class="slds-grid slds-path__action">
+            <button class="slds-button slds-button--brand slds-path__mark-complete" onclick={handleSubmit}>
+              <template if:true={isCurrentStep}>
+                <svg class="slds-button__icon slds-icon_xx-small" aria-hidden="true" style="color:white" >
+                  <use xlink:href="/_slds/icons/utility-sprite/svg/symbols.svg#check"></use>
+                </svg>
+              </template>
+              <span>{buttonText}</span>
+              <template if:true={isLoading}>
+                  <lightning-spinner title='Loading' alternative-text="Loading" variant="brand"></lightning-spinner>
+                </template>
+            </button>
+          </div>
+        </div>
+       <!-- tool tip-->
+       <template for:each={steps} for:item="toolTipStep">
+          <div key={toolTipStep.label} style="position:absolute">
+            <template if:true={toolTipStep.showPopOver}>
+              <div class="slds-popover slds-popover_tooltip slds-nubbin_top" role="tooltip" style={toolTipStep.styleClass} >
+                <div class="slds-popover__body">{toolTipStep.timeInStage}</div>
+              </div>
+            </template>
+          </div>
+        </template>
+      </div>
+    </lightning-card>
+    <c-step-modal source-page="businessPath"></c-step-modal>
+</template>

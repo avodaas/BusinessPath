@@ -1,0 +1,49 @@
+<template>
+      <!-- modal start -->
+      <template if:true={showModal}>
+        <section role="dialog" tabindex="-1" aria-labelledby="modal-heading-01" aria-modal="true" aria-describedby="modal-content-id-1" class="slds-modal slds-fade-in-open">
+        <div class="slds-modal__container">
+            <!-- modal header start -->
+            <header class="slds-modal__header">
+                <button class="slds-button slds-button_icon slds-modal__close slds-button_icon-inverse" title="Close" onclick={closeModal}>
+                    <lightning-icon icon-name="utility:close"
+                    alternative-text="close"
+                    variant="inverse"
+                    size="small" ></lightning-icon>
+                    <span class="slds-assistive-text">Close</span>
+                </button>
+                <h2 id="modal-heading-01" class="slds-text-heading_medium slds-hyphenate">Edit Dependencies</h2>
+            </header>
+            <!-- modal body start -->
+            <div class="slds-modal__content slds-p-around_medium" id="modal-content-id-1" style="overflow: visible;">
+                <lightning-combobox
+                                    data-id="stepId" 
+                                    label='Status'
+                                    value={stepValue}
+                                    options={options}
+                                    onchange={handleStepChange}
+                                    read-only="true"
+                                    >
+                </lightning-combobox>
+                <lightning-combobox data-id="dependentId"
+                                    label='Status Reason'
+                                    value={dependentValue}
+                                    options={dependentOptions}
+                                    onchange={handleDependentStepChange}
+                                    >
+                </lightning-combobox>
+                <template if:true={showDescription}>
+                    <lightning-input type="text" onchange={handleDescriptionChange} label="Other Desciption" data-id="reasonId"></lightning-input>
+                </template>
+            </div>
+            <!-- modal footer start-->
+            <footer class="slds-modal__footer">
+                <lightning-button variant="neutral" class="slds-p-right_small" type="submit" name="Cancel" label="Cancel" onclick={closeModal}></lightning-button> 
+                <lightning-button variant="brand" type="submit" name="Done" label="Done" onclick={handleModalSubmit} data-id="submitId"></lightning-button>
+            </footer>
+        </div>
+        </section>
+        <div class="slds-backdrop slds-backdrop_open"></div>
+    </template>
+    <!-- modal end -->
+</template>
