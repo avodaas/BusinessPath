@@ -1,0 +1,27 @@
+<template>
+   <template if:true={objectOptions}>
+        <c-autocomplete-search 
+                            search-label="Select Object"
+                            is-required="true"
+                            selected-name={objectName}
+                            options={objectOptions}
+                            oninputchanged={handleObjectNameInputChange}
+                            onlookupselect={handleObjectNameSelection}>
+        </c-autocomplete-search> 
+
+        <lightning-combobox
+            disabled={disableListvSearch}
+            name="List Views"
+            label="Select List View"
+            value={listviewid}
+            placeholder="Select List View"
+            options={listviewOptions}
+            onchange={handleListviewSelection} >
+        </lightning-combobox>
+        <template lwc:if={isProccessingCsv}>
+             <lightning-spinner  size="medium"></lightning-spinner>
+        </template>
+       
+       <lightning-button variant="brand-outline" disabled={disableExportBotton} label="Generate Csv" class = 'slds-align_absolute-center slds-m-top_medium ' onclick={handleGenerateCSV}></lightning-button>
+    </template>
+</template>
